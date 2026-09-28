@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>404 - पेज नहीं मिला | दिव्य पंचायत</title>
+<meta name="theme-color" content="#ff7a00">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#ff7a00; --amber:#ffb300; --ink:#333;
+    --bg1:#fff8ee; --bg2:#ffe3bf; --card:rgba(255,255,255,.72);
+    --text:#333; --muted:#6b5b4a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg1:#1a0f05; --bg2:#341a06; --card:rgba(30,16,6,.6); --text:#fff3e2; --muted:#e3c9a8; --ink:#fff3e2; }
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Mukta","Poppins","Noto Sans Devanagari",system-ui,sans-serif;
+    color:var(--text);
+    background:radial-gradient(ellipse at 50% 25%, var(--bg2), var(--bg1) 70%);
+    overflow-x:hidden;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  #scene{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+  .wrap{
+    position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px 16px;text-align:center;perspective:1000px;
+  }
+  .card{
+    width:min(680px,100%);
+    background:var(--card);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    border:2px solid rgba(255,122,0,.55);border-radius:28px;
+    padding:26px 22px 26px;
+    box-shadow:0 30px 60px -20px rgba(255,122,0,.45),0 0 0 6px rgba(255,122,0,.08);
+    transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform;
+  }
+  .num{
+    display:flex;justify-content:center;align-items:center;gap:clamp(4px,2vw,16px);
+    font-family:Poppins,sans-serif;font-weight:800;line-height:1;
+    font-size:clamp(5rem,26vw,12rem);
+    transform:translateZ(70px);transform-style:preserve-3d;
+  }
+  .num span{
+    display:inline-block;color:var(--orange);
+    text-shadow:
+      1px 1px 0 #e56b00,2px 2px 0 #d96400,3px 3px 0 #cc5d00,4px 4px 0 #bf5600,
+      5px 5px 0 #b35000,6px 6px 0 #a64a00,7px 7px 0 #994300,8px 8px 0 #8c3d00,
+      12px 18px 28px rgba(255,122,0,.45);
+    animation:float 4s ease-in-out infinite;
+  }
+  .num span:nth-child(2){animation-delay:-1.3s}
+  .num span:nth-child(3){animation-delay:-2.6s}
+  .num .sunzero{
+    width:.72em;height:.72em;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#fff3a0,#ffc21a 45%,#ff8a00 100%);
+    box-shadow:0 0 40px 10px rgba(255,160,20,.65),0 14px 30px rgba(255,122,0,.5);
+    text-shadow:none;animation:float 4s ease-in-out infinite -1.3s,glow 2.4s ease-in-out infinite;
+  }
+  @keyframes float{0%,100%{transform:translateY(0) rotateY(-8deg)}50%{transform:translateY(-14px) rotateY(8deg)}}
+  @keyframes glow{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
+  h1{
+    margin-top:10px;font-weight:800;font-size:clamp(1.7rem,6vw,2.6rem);color:var(--ink);
+    transform:translateZ(45px);
+  }
+  .bar{height:6px;width:min(300px,70%);margin:12px auto;border-radius:6px;background:linear-gradient(90deg,var(--orange),var(--amber));transform:translateZ(30px)}
+  p{font-size:clamp(1rem,3.4vw,1.2rem);font-weight:600;color:var(--muted);transform:translateZ(30px);max-width:460px;margin:0 auto}
+  .btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px;transform:translateZ(50px)}
+  .btn{
+    font-family:inherit;font-weight:700;font-size:1.05rem;text-decoration:none;cursor:pointer;
+    padding:12px 26px;border-radius:999px;border:2px solid var(--orange);transition:transform .2s,box-shadow .2s;
+  }
+  .btn.primary{background:linear-gradient(90deg,var(--orange),var(--amber));color:#fff;box-shadow:0 8px 20px rgba(255,122,0,.4)}
+  .btn.ghost{background:transparent;color:var(--orange)}
+  .btn:hover,.btn:focus-visible{transform:translateY(-4px) scale(1.04);box-shadow:0 14px 26px rgba(255,122,0,.5);outline:none}
+  .brand{margin-top:20px;font-family:Poppins,sans-serif;font-weight:600;font-size:.95rem;color:var(--muted);transform:translateZ(20px)}
+  .brand b{color:var(--orange)}
+  @media (prefers-reduced-motion: reduce){ .num span,.num .sunzero{animation:none} .card{transition:none} }
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+ 
+<main class="wrap">
+  <section class="card" id="card">
+    <div class="num" aria-label="404">
+      <span>4</span><span class="sunzero"></span><span>4</span>
+    </div>
+    <h1>पेज नहीं मिला</h1>
+    <div class="bar"></div>
+    <p>आप जो पेज ढूंढ रहे हैं वो हट चुका है, नाम बदल गया है या मौजूद ही नहीं है।</p>
+    <div class="btns">
+      <a class="btn primary" href="/">🏠 होम पेज पर जाएं</a>
+      <button class="btn ghost" type="button" onclick="history.length>1?history.back():location.href='/'">← वापस जाएं</button>
+    </div>
+    <div class="brand">दिव्य पंचायत &middot; <b>divyapanchayat.com</b></div>
+  </section>
+</main>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* Card tilt */
+const card = document.getElementById("card");
+let mx = 0, my = 0;
+window.addEventListener("pointermove", e => {
+  mx = (e.clientX / innerWidth) * 2 - 1;
+  my = (e.clientY / innerHeight) * 2 - 1;
+  card.style.transform = `rotateY(${mx*8}deg) rotateX(${-my*6}deg)`;
+});
+window.addEventListener("pointerleave", () => { mx = my = 0; card.style.transform = ""; });
+ 
+/* Background: floating embers + faint sun rings */
+(function(){
+  if (typeof THREE === "undefined") return;
+  const canvas = document.getElementById("scene");
+  let renderer;
+  try { renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true}); } catch(e){ return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+  camera.position.set(0, 0, 10);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+ 
+  // Rings
+  const mat = new THREE.MeshBasicMaterial({color:0xff7a00, transparent:true, opacity:.35});
+  const r1 = new THREE.Mesh(new THREE.TorusGeometry(4.2, 0.03, 16, 160), mat);
+  const r2 = new THREE.Mesh(new THREE.TorusGeometry(5.6, 0.02, 16, 160), mat.clone());
+  r2.material.opacity = .2;
+  r1.rotation.x = 1.0; r2.rotation.y = 1.1;
+  scene.add(r1, r2);
+ 
+  // Embers
+  const N = 240, pos = new Float32Array(N*3), spd = new Float32Array(N);
+  for (let i=0;i<N;i++){
+    pos[i*3]=(Math.random()-.5)*24; pos[i*3+1]=(Math.random()-.5)*14; pos[i*3+2]=(Math.random()-.5)*10-2;
+    spd[i]=0.2+Math.random()*0.6;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos,3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({
+    color:0xff9a1f, size:0.09, transparent:true, opacity:.85, depthWrite:false, blending:THREE.AdditiveBlending
+  })));
+ 
+  function resize(){
+    renderer.setSize(innerWidth, innerHeight, false);
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+  }
+  addEventListener("resize", resize); resize();
+ 
+  const clock = new THREE.Clock(); let tx=0, ty=0;
+  (function loop(){
+    requestAnimationFrame(loop);
+    const t = clock.getElapsedTime(), k = reduce ? 0 : 1;
+    r1.rotation.z = t*.25*k; r2.rotation.x = 1.0 + t*.15*k;
+    const a = g.attributes.position.array;
+    for (let i=0;i<N;i++){ a[i*3+1] += spd[i]*.01*k; if (a[i*3+1] > 7) a[i*3+1] = -7; }
+    g.attributes.position.needsUpdate = true;
+    tx += (mx*1.0 - tx)*.05; ty += (-my*.6 - ty)*.05;
+    camera.position.x = tx; camera.position.y = ty; camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  })();
+})();
+</script>
+</body>
+</html>
+ 
